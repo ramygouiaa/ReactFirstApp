@@ -30,10 +30,24 @@ this.setState({
 })
 }
 
+componentDidMount(){
+  console.log('component mounted');
+}
+
+componentDidUpdate(prevProps, prevState){
+  console.log('component updated');
+  console.log(prevProps, prevState);
+  
+  
+  
+
+}
+
   render() {
     return (
       <div>
         <h1>Hello {this.state.name} this is my first React app</h1>
+        <h2>only Ninjas above 20 Years old will be shown</h2>
         <Ninjas deleteNinja = {this.deleteNinja} ninjas= {this.state.ninjas}/>
         <AddNinja addNinja = {this.addNinja} />
       </div>
