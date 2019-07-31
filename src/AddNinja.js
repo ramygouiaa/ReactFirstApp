@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 class AddNinja extends Component {
     state = {
-        name:null,
-        age:null,
-        belt:null
+        name:'',
+        age:'',
+        belt:''
     }
 
     handleChange = (e) => {
@@ -17,6 +17,11 @@ class AddNinja extends Component {
         e.preventDefault()
         //console.log(this.state);
         this.props.addNinja(this.state)
+        this.setState({
+            name:'',
+            age:'',
+            belt:''
+        })
         
     }
 
@@ -25,11 +30,11 @@ render(){
         <div>
             <form onSubmit = {this.handleSubmit}>
                 <label htmlFor="name">Name:</label>
-                <input type="text" id="name" onChange = {this.handleChange}/>
+                <input type="text" id="name" onChange = {this.handleChange} value={this.state.name}/>
                 <label htmlFor="name">Age:</label>
-                <input type="text" id="age" onChange = {this.handleChange}/>
+                <input type="text" id="age" onChange = {this.handleChange} value={this.state.age}/>
                 <label htmlFor="name">Belt:</label>
-                <input type="text" id="belt" onChange = {this.handleChange}/>
+                <input type="text" id="belt" onChange = {this.handleChange} value={this.state.belt}/>
                 <button>Submit</button>
             </form>
         </div>
